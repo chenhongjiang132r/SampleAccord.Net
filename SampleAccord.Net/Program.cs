@@ -1,3 +1,5 @@
+using Accord.Controls;
+using Accord.Statistics;
 using Accord.Statistics.Models.Regression;
 using Accord.Statistics.Models.Regression.Fitting;
 using System;
@@ -37,6 +39,10 @@ namespace SampleAccord.Net
 
             //Predict Output
             bool[] predictions = logit.Decide(inputs);
+
+            //Plot Results
+            ScatterplotBox.Show("Expected Results", inputs, outputs);
+            ScatterplotBox.Show("Actual Logistic Regression Output", inputs, predictions.ToZeroOne());
 
             Console.ReadKey();
         }
