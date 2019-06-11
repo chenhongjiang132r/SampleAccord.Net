@@ -1,3 +1,5 @@
+using Accord.Statistics.Models.Regression;
+using Accord.Statistics.Models.Regression.Fitting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +27,13 @@ namespace SampleAccord.Net
                 1,
                 1,
             };
-            
+
+            //Train a Logistic Regression Model
+            var learner = new IterativeReweightedLeastSquares<LogisticRegression>()
+            {
+                MaxIterations = 100
+            };
+            var logit = learner.Learn(inputs, outputs);
 
             Console.ReadKey();
         }
