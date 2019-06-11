@@ -35,6 +35,9 @@ namespace SampleAccord.Net
             };
             var logit = learner.Learn(inputs, outputs);
 
+            //Predict Output
+            bool[] predictions = logit.Decide(inputs);
+
             Console.ReadKey();
         }
     }
