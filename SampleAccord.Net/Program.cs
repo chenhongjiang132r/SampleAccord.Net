@@ -17,6 +17,14 @@ namespace SampleAccord.Net
                 new double[] {0.5, 0.5},
                 new double[] {1, 1},
             };
+
+            int[] outputs =
+            {
+                0,
+                0,
+                1,
+                1,
+            };
             
 
             Console.ReadKey();
